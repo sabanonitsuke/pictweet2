@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   def create
     Comment.create(comment_params)
+    redirect_to "/tweets/#{comment.tweet.id}"
+      # redirect_to "/tweets/#{params[:tweet_id]}"でもOK?
   end
 
   private
